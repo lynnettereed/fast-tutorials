@@ -16,6 +16,7 @@ const config = {
         contentBase: './public',
         port: 1500
     },
+    mode: process.env.NODE_ENV || "development",
     devtool: 'source-map',
     entry: "./app/index.jsx",
     output: {
@@ -51,11 +52,6 @@ const config = {
                         loader: 'eslint-loader',
                     }],
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.json$/,
-                exclude: /(node_modules)/,
-                loader: 'json-loader'
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,

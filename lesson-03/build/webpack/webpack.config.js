@@ -22,6 +22,7 @@ const config = {
         path: path.resolve("build/public"),
         publicPath: "/"
     },
+    mode: process.env.NODE_ENV || "development",
     module: {
         rules: [
             {
@@ -51,11 +52,6 @@ const config = {
                         loader: 'eslint-loader',
                     }],
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.json$/,
-                exclude: /(node_modules)/,
-                loader: 'json-loader'
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
