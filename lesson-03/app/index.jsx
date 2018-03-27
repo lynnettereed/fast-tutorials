@@ -33,7 +33,30 @@ var globalNavigation = {
         {
             "text": "Azure",
             "href": "#"
-        }
+        },
+        {
+            "buttonText": "More",
+            "id": "moreButton",
+            "items": [
+              {
+                "text": "Business",
+                "href": "https://www.microsoft.com/en-us/store/b/business?icid=TopNavBusinessStore"
+              },
+              {
+                "text": "Students & educators",
+                "href": "https://www.microsoft.com/en-us/store/b/student?icid=TopNavEduStore"
+              },
+              {
+                "text": "Developer",
+                "href": "https://www.microsoft.com/en-us/store/b/developer?icid=CNavDeveloper"
+              },
+              {
+                "text": "Gift cards",
+                "href": "https://www.microsoft.com/en-us/store/b/gift-cards"
+              }
+            ],
+            "expanded": false
+          }
     ],
     "logo": {
         "href": "#",
