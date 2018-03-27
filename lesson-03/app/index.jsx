@@ -11,6 +11,7 @@ const styles = require('../build/public/assets/styles/css/fw-west-european-defau
 // ==================================================================
 // Configuring Header component
 import logoMsGray from './assets/images/logos/microsoft-gray.png';
+import meImage from './assets/images/satya.png';
  
 var globalNavigation = {
     "items": [
@@ -86,6 +87,16 @@ var mobileNext = {
     "text": "Next"
 };
 
+var me = {
+    "media": {
+      "src": meImage,
+      "alt": "Microsoft profile picture"
+    },
+    "name": {
+      "text": "Satya"
+    }
+  };
+
 var actions = [
     {
         "glyph": "waffle",
@@ -119,6 +130,7 @@ ReactDOM.render(
             mobilePrevious={ mobilePrevious }
             mobileNext={ mobileNext }
             actions={ actions } 
+            me={ me }
         />
     </div>
     ,
