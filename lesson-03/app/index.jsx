@@ -12,13 +12,10 @@ const styles = require('../build/public/assets/styles/css/fw-west-european-defau
 // ==================================================================
 // Configuring Header component
 import logoMsGray from './assets/images/logos/microsoft-gray.png';
- 
-// ==================================================================
-// Configuring other components
 
 // ==================================================================
 // Render app
-// Anything below introduces using layout elements from Fluent Web
+// Anything below is an introduction to consuming fluent web components.
 
 ReactDOM.render(
     <Page>
