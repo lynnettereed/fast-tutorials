@@ -10,10 +10,6 @@ import { Grid, Column, Page } from '@ms-fw/fw-react/layouts';
 const styles = require('../build/public/assets/styles/css/fw-west-european-default-orange.css');
 
 // ==================================================================
-// Configuring Header component
-import logoMsGray from './assets/images/logos/microsoft-gray.png';
-
-// ==================================================================
 // Render app
 // Anything below is an introduction to consuming fluent web components.
 
