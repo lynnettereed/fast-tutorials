@@ -13,20 +13,23 @@ This tutorial explores how to build a Fluent Web page using [Page, Grid, and Col
 
 ## Installing application dependencies
 Ensure you're inside the /lesson-04 directory and install pre-requisites node packages.
-```
+
+```bash
 $ npm i
 ```
 
 ## Working in local development environment
 Leverage Webpack capability to build web application and run locally while making web application changes.
 
-Build, and startup webpack server as development (http://localhost:1500).
-```
+Build, and startup webpack server as development (<http://localhost:1500>).
+
+```bash
 $ npm run serve-dev
 ```
 
 Build and compile for production. This will generate files into `./build/public` that can then be deployed into production.
-```
+
+```bash
 $ npm run serve-pro
 ```
 
@@ -34,6 +37,7 @@ $ npm run serve-pro
 When running production for the first time there may be errors. This happens because the Fluent Web styles are required as imports in the `jsx` file, however, until the compiler runs the files do not yet exist. The workaround for this is to ensure sass is compiled before running Webpack server.
 
 The solution, is to `npm run sass` before Webpack as shown in `package.json`.
+
 ```json
  "scripts": {
     "serve-pro": "npm run sass && cross-env NODE_ENV=production webpack --config ./build/webpack/webpack.config.js --progress",
@@ -43,13 +47,14 @@ The solution, is to `npm run sass` before Webpack as shown in `package.json`.
 ```
 
 Errors if the solution above is not properly implemented.
-```bash
+
+```J
 ERROR in ./app/index.jsx
 Module not found: Error: Can't resolve '../build/public/assets/styles/css/fw-west-european-default-orange.css' in '/Users/jdoe/Microsoft/Projects/FluentWeb/fast-tutorials/lesson-04/app'
  @ ./app/index.jsx 12:15-95
 ```
 
-```bash
+```J
 ERROR in ./node_modules/css-loader!./node_modules/postcss-loader/lib!./build/public/assets/styles/css/fw-west-european-default-orange.css
 Module not found: Error: Can't resolve '../fonts/FWMDL2.svg' in '/Users/jdoe/Microsoft/Projects/FluentWeb/fast-tutorials/lesson-04/build/public/assets/styles/css'
     @ ./node_modules/css-loader!./node_modules/postcss-loader/lib!./build/public/assets/styles/css/fw-west-european-default-orange.css 7:1155-1185

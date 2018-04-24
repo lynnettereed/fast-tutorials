@@ -50,7 +50,6 @@ This folder contains webpack configuration. When webpack builds for production s
 ### 'root'
 This folder contains production server configuration files in structure compatible with the OS running the application and used by Docker.
 
-
 ## Working with Docker (For advanced users and DevOps)
 Each lesson includes Docker configuration files. For most people these can be ignored. For those interested in DevOps you can test your applications by running live production scenarios locally. Every lesson is production ready and deployable.
 If you're not familiar with Docker, it brings mobility to any environment simplifying continuous development and delivery into production.
@@ -59,7 +58,8 @@ Leverage Docker for running as a staging environment to pre-validate and test th
 
 ### Installing and validating pre-requisites
 Validate and view your Compose file.
-```
+
+```bash
 $ docker-compose config
 ```
 
@@ -67,67 +67,75 @@ $ docker-compose config
 This is only required until there are no private node packages being used and this can then all be scripted in the Dockerfile.
 
 Install all packages and run Webpack for production to generate the production files which can be copied up to the server container.
-```
+
+```bash
 $ npm i
 $ npm run serve-pro
 ```
 
 ### Building
 Build and verify all work is being done correctly.
-```
+
+```bash
 $ docker-compose build
 ```
 
 ### Starting and re-building
 Start up the server in interactive mode.
-```
+
+```bash
 $ docker-compose up
 ```
 
 Start up the server in background as `-d`, detached mode.
-```
+
+```bash
 $ docker-compose up -d
 ```
 
-*Launch a web browser and visit http://localhost:3000* The ports map directly to the lessons when testing Docker. So lesson-03 would have port 3000. Lesson-02 would use port 2000.
+*Launch a web browser and visit <http://localhost:3000>* The ports map directly to the lessons when testing Docker. So lesson-03 would have port 3000. Lesson-02 would use port 2000.
 
 ### Stopping
 Stop the container and retain all data settings.
-```
+
+```bash
 $ docker-compose stop
 ```
 
 ### Tearing down
 Stops all containers, removes them, and deletes the images. Add `--volumes` flag to remove all data volumes.
-```
+
+```bash
 $ docker-compose down --volumes
 ```
 
 ## Troubleshooting
 ### Inspecting images
 Use the `tag` or `id` of a running image to inspect. For example, if you want to inspect a running web service named 'fw-web' as shown from the listed images above. Inspection returns all configurations as set on an image. For example, would show you all running environment variables, system settings, network configurations etc.
-```
+
+```bash
 $ docker inspect fw-web
 ```
 
 ### Listing local images
-```
+```bash
 $ docker image ls
 ```
 
 ### Viewing running services
-```
+```bash
 $ docker-compose ps
 ```
 
 ### Reading environment variables
 For example, to see what `env` (environment) variables are available to the `web` service
-```
+
+```bash
 $ docker-compose run web env
 ```
 
 ### To see other available commands
-```
+```bash
 $ docker-compose --help
 ```
 
@@ -136,31 +144,44 @@ $ docker-compose --help
 - [Docker swarms](https://docs.docker.com/get-started/part4/#understanding-swarm-clusters)
 - [Putting it all together](https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/)
 
-
 ## Cleanup unused containers
 Caution, when doing so as you will loose all data. Only do this if you want to completely delete everything about Docker and start over from scratch. Useful in the beginning while testing Docker configurarion and installation is working.
-``` 
+
+```bash
 $ docker ps
 $ docker stop <container id>
 ```
+
 Example
-> $ docker stop 52e1ac102a3a
+
+```bash
+$ docker stop 52e1ac102a3a
+```
 
 List all installed images, then remove each one individually.
-```
+
+```bash
 $ docker images
 $ docker rmi <container id>
 ```
+
 Example
-> $ docker rmi 273374b463b8
+
+```bash
+$ docker rmi 273374b463b8
+```
 
 You can also bundle together.
-```
+
+```bash
 $ docker rmi <container id> <container id>
 ```
-Example
-> $ docker rmi 273374b463b8 96d0f978ee83
 
+Example
+
+```bash
+$ docker rmi 273374b463b8 96d0f978ee83
+```
 
 ## Ownership
 Email Fluent Web Questions <fwq@microsoft.com> about this repository.

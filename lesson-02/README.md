@@ -1,8 +1,9 @@
 # Lesson 02 - Learning with Fluent Web
 
-# FAST Lesson 02 - Building your first 'hello world' website
+## FAST Lesson 02 - Building your first 'hello world' website
 
 This lesson covers the following topics:
+
 1. Install and configure a basic Webpack implementation.
 2. Install and import ReactJS.
 3. Walk through entry point and templating
@@ -16,20 +17,25 @@ This lesson covers the following topics:
     * Build and deploy for both environments walking through the output
 
 ## Installing application dependencies
+
 Ensure you're inside the /lesson-02 directory and install pre-requisites node packages.
-```
+
+```bash
 $ npm i
 ```
 
 ## Working in local development environment
+
 Leverage Webpack capability to build web application and run locally while making web application changes.
 
-Build, and startup webpack server as development (http://localhost:1500).
-```
+Build, and startup webpack server as development (<http://localhost:1500>).
+
+```bash
 $ npm run serve-dev
 ```
 
 Build and compile for production. This will generate files into `./build/public` that can then be deployed into production.
-```
+
+```bash
 $ npm run serve-pro
 ```
